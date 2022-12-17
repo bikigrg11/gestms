@@ -133,7 +133,7 @@ pipeline{
                  }   
              }   
          }
-        stage('Sanity check') {
+        stage('Prod check') {
             steps {
                 input "Does the Production environment look ok?"
             }
