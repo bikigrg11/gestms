@@ -104,7 +104,7 @@ pipeline{
                 }
             }
         }
-         stage('Prod') {
+        stage('Prod') {
              agent{label 'terraformAgent'}
              steps {
                  withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'),
@@ -133,6 +133,11 @@ pipeline{
                  }   
              }   
          }
+        stage('Sanity check') {
+            steps {
+                input "Does the Production environment look ok?"
+            }
+        }
          stage('ProductionDestroy') {
              agent{label 'terraformAgent'}
              steps {
