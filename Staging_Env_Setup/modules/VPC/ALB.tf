@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "docker_instances" {
 # Listener (redirects traffic from the load balancer to the target group)
 resource "aws_alb_listener" "ec2-alb-http-listener" {
   load_balancer_arn = aws_lb.docker_instance_LB.arn
-  port              = "80"
+  port              = "8000"
   protocol          = "HTTP"
   #depends_on        = [aws_alb_target_group.docker_instances]
 

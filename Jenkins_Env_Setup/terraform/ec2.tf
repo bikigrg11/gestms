@@ -25,7 +25,7 @@ resource "aws_instance" "Kura6_Terraform" {
 #INSTANCES
 resource "aws_instance" "Kura6_Jenkins" {
   ami = "ami-08c40ec9ead489470"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   key_name = "Ktest"
   subnet_id = aws_subnet.Kura6_SUBNET.id
   vpc_security_group_ids = [aws_security_group.Kura6_Security.id]
